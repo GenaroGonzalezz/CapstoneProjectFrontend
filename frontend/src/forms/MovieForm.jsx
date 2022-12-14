@@ -8,7 +8,7 @@ const MovieForm = ({ onSubmit, defaultEditValues }) => {
   const defaultValues = {
     name: '',
     synopsis: '',
-    coverImage: 0,
+    coverImage: '',
     genre: '',
     movieUrl: '',
     releaseDate: ''

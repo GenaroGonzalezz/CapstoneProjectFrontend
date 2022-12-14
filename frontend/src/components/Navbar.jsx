@@ -12,11 +12,12 @@ const Navbar = ({ favMovieQty }) => {
     <AppBar position="static" sx={{backgroundColor:"crimson"}}>
       <Container maxWidth="xl">
         <Toolbar>
+          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="/"
+           
             sx={{
               mr: 2,
               fontFamily: "monospace",
@@ -29,6 +30,7 @@ const Navbar = ({ favMovieQty }) => {
           >
             CLONEFLIX
           </Typography>
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -46,7 +48,7 @@ const Navbar = ({ favMovieQty }) => {
             </Link>
             <Link to="/" style={{ textDecoration: "none" }}>
               <Button sx={{ my: 2, color: "white", display: "block" }}>
-                Shop
+                Catalog
               </Button>
             </Link>
           </Box>

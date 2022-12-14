@@ -1,48 +1,60 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import { Typography, Chip, Grid } from '@mui/material';
+import { Link, useNavigate, NavLink } from "react-router-dom";
+
+
 const MovieInfo = ({ movie }) => {
+const navigate = useNavigate();
+
+const handleDetail = (movieId) => {
+  navigate('/details', {state: {movie}});
+}
   return (
-    <Box sx={{ backgroundColor: "white", height: 480, border: 1 }}>
-      <Box
-        component="img"
-        sx={{ height: 0.4, width: 1, objectFit: "cover" }}
-        src={movie.coverImage}
-        alt="a movie"
-      />
-      <Stack
-        sx={{ height: 0.6, px: 4, width: 0.85 }}
+    <Box
+    
+    sx={{ backgroundColor: "#E9ECF4", height: "100%", border: 3, borderRadius: 3 }}>
+        <Box
+          component="img"
+          sx={{ height: 0.7, width: 1, objectFit: "cover", borderRadius: "3% 3% 0% 0%" }}
+          src={movie.coverImage}
+          alt="a movie"
+          onClick={()=>{ handleDetail();}}
+        />
+      {/* <Stack
+        sx={{ height: 0.8, px: 4, width: 0.85 }}
         justifyContent="space-around"
-        spacing={2}
-      >
-        <Stack spacing={1} sx={{ width: 1 }}>
-          <Typography fontSize={24}>{movie.name}</Typography>
+       
+      > */}
+      <Stack sx={{ height: 0.8, width: 1, alignItems: "center" }}>
+        <Typography fontSize={24} >{movie.name}</Typography>
+        <Grid container sx={{ justifyContent: "space-around" }}>
+          <Typography fontSize={20}>{movie.releaseDate}</Typography>
 
-        </Stack>
-        <Stack>
-          <Typography fontSize={10}>{movie.synopsis}</Typography>
-          <Grid>
-            {movie.genre == "" || movie.genre == null ?
-              <>
-          
-              </>
-              :
-              <>
-                <Chip color="primary" label={movie.genre} size="small" sx={{ width: 0.30, margin: 0.5 }} />
-              </>
-            }
+          {movie.genre === "" || movie.genre === null ?
+            <>
 
-          </Grid>
+            </>
+            :
+            <>
+              <Chip color="primary" label={movie.genre} size="small" sx={{ margin: 0.5 }} />
+            </>
+          }
 
-          <Typography fontSize={24}>{movie.movieUrl}</Typography>
-          <Typography fontSize={24}>{movie.releaseDate}</Typography>
-        </Stack>
-        {/* <Stack spacing={1} sx={{ width: 1 }}>
+        </Grid>
+      </Stack>
+      {/* <Stack> */}
+      {/* <Typography fontSize={10}>{movie.synopsis}</Typography> */}
+
+
+      {/* <Typography fontSize={24}>{movie.movieUrl}</Typography> */}
+      {/* </Stack> */}
+      {/* <Stack spacing={1} sx={{ width: 1 }}>
           <Typography fontSize={16}>Price</Typography>
           <Typography fontSize={24}>{`$${movie.price}`}</Typography>
         </Stack> */}
-      </Stack>
+      {/* </Stack> */}
     </Box>
   );
 };

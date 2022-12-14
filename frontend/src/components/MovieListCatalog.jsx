@@ -9,6 +9,7 @@ const MovieListCatalog = ({ movies, onAdd }) => {
     return null;
   }
 
+
   return (
     <>
     

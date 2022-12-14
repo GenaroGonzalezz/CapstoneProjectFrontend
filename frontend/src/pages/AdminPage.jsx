@@ -35,6 +35,8 @@ const AdminPage = ({ allMovies, setAllMovies }) => {
         setEditMovie(movie)
     }
 
+  
+
     const handleOnDelete = async id => {
         const response = await deleteMovie(id);
         if (response)

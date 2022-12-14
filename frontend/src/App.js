@@ -8,11 +8,11 @@ import AdminPage from './pages/AdminPage';
 import Catalog from './pages/Catalog';
 import Navbar from './components/Navbar';
 import { getMovies } from './api/moviesApi';
+import MovieDetails from './pages/MovieDetails';
 
 function App() {
   const [allMovies, setAllMovies] = useState([]);
   const [favMovies, setFavMovies] = useState([]);
-
   useEffect(() => {
     getAllMovies()
   }, [])
@@ -42,11 +42,13 @@ function App() {
     setFavMovies(tempFavMovies);
   };
 
+
   return (
 
     <Fragment>
       <Navbar favMovieQty={0} />
       <Routes>
+
         <Route
           path="/admin"
           element={
@@ -62,6 +64,14 @@ function App() {
             <Catalog
               movies={allMovies}
               onAdd={onAdd} />}
+        />
+
+        <Route
+          path="/details"
+          element={
+            <MovieDetails
+            />
+          }
         />
       </Routes>
     </Fragment>
