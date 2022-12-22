@@ -48,7 +48,6 @@ function App() {
     <Fragment>
       <Navbar favMovieQty={0} />
       <Routes>
-
         <Route
           path="/admin"
           element={

@@ -22,11 +22,7 @@ const handleDetail = (movieId) => {
           alt="a movie"
           onClick={()=>{ handleDetail();}}
         />
-      {/* <Stack
-        sx={{ height: 0.8, px: 4, width: 0.85 }}
-        justifyContent="space-around"
-       
-      > */}
+    
       <Stack sx={{ height: 0.8, width: 1, alignItems: "center" }}>
         <Typography fontSize={24} >{movie.name}</Typography>
         <Grid container sx={{ justifyContent: "space-around" }}>
@@ -44,17 +40,7 @@ const handleDetail = (movieId) => {
 
         </Grid>
       </Stack>
-      {/* <Stack> */}
-      {/* <Typography fontSize={10}>{movie.synopsis}</Typography> */}
-
-
-      {/* <Typography fontSize={24}>{movie.movieUrl}</Typography> */}
-      {/* </Stack> */}
-      {/* <Stack spacing={1} sx={{ width: 1 }}>
-          <Typography fontSize={16}>Price</Typography>
-          <Typography fontSize={24}>{`$${movie.price}`}</Typography>
-        </Stack> */}
-      {/* </Stack> */}
+      
     </Box>
   );
 };

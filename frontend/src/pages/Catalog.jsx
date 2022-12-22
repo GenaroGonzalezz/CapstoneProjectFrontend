@@ -4,7 +4,7 @@ import MovieListCatalog from "../components/MovieListCatalog";
 
 const Catalog = ({ movies, onAdd }) => {
   return (
-    <Container maxWidth="lg" sx={{ margin: 2 }}>
+    <Container maxWidth="lg" sx={{ margin: 2}}>
       <MovieListCatalog movies={movies} onAdd={onAdd} />
     </Container>
   );
